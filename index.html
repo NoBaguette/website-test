@@ -1,9 +1,29 @@
-<h1>Website is currently under maintenance</h1>
 <h1>grüße von quentien und herr grüner an stefan und donald j trump</h1>
 <h1>www.youtube.com</h1>
-
-
 <p align="center"> <img src="greenland.jpg"> </p>
+
+<form method="post">
+    <center>
+        <label for="username">    Name:</label>
+        <input type="text" id="username" name="username" maxlength="30"><br></br>
+        
+        <textarea type="text" id="message" rows="10" cols="40" maxlength="320" style="overflow:auto;resize:none"></textarea><br></br>
+        <input type="button", id="submit" onclick="submission();">
+    </center>
+</form>
+
+
 <script>
-  
+
+    fetch('./data.json')
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+        
+    function submission(){
+        alert("Thank you for submitting.");
+
+        var _name       = document.getElementById("username").value;
+        var _comment    = document.getElementById("message").value;
+        alert(_name + " sent " + _comment);
+    }
 </script>
